@@ -1,0 +1,18 @@
+{% extends 'panel.html' %}
+{% block addcss %}
+<link rel="stylesheet" href="{{url_for('static',filename='addnotes.css')}}">
+{% endblock %}
+{% block content %}
+<h1>Add notes</h1>
+<div class="container">
+    
+    <form method="post">
+        <label for="titleField">Title:</label>
+        <input type="text" id="titleField" placeholder="Enter a title of the recipe"  name="title" required/>
+        <label for="contentField">Content:</label>
+        <textarea id="contentField" class="content-field" placeholder="Write your recipe preparation..." name="content" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{{url_for('panel')}}"><button type="submit" class="back">Back</button></a>
+</div>
+{% endblock %}

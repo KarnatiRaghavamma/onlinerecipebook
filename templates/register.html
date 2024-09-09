@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+      
+        .register-container{
+         border: 1px solid black;
+         width: 40%;
+         margin: auto;
+         text-align: center;
+         line-height: 1.9;
+         padding-bottom: 1.5%;
+         border-radius: 15px;
+         background-color: beige;
+         border: none;
+        }
+        .register-container input{
+         padding: 5px;
+         width: 60%;
+         border-radius: 10px;
+         border: none;
+         padding: 10px;
+        }
+        .btn{
+            width:15%;
+            color:rgb(146, 32, 32);
+            border:none;
+            font-weight: bold;
+            padding: 15px;
+            border-radius: 15px;
+            background-color: #e2eb65;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center style="color: green;">{{ message }}</center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <div class="register-container">
+        <h1>Sign Up Form</h1>
+       <form method="post">
+            <label>First Name:</label></br>
+            <input type="text" placeholder="Enter First name" name="s_fname" /></br>
+            <label>Last Name:</label></br>
+            <input type="text" placeholder="Enter last name" name="s_lname" /></br>
+            <label>Email:</label></br>
+            <input type="email" placeholder="Enter Email" name="email" /></br>
+            <label>Phone Number:</label></br>
+            <input type="number" placeholder="Enter phone no" name="ph_no" /></br>
+            <label>Address:</label></br>
+            <input type="text" placeholder="Enter Address" name="address" /></br>
+            <label>Password:</label></br>
+            <input type="password" placeholder="Enter password" name="password" /></br></br>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

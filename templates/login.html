@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <style>
+        h1{
+            color:black;
+        }
+        div{
+            border: 1px solid black;
+         width: 40%;
+         margin: auto;
+         text-align: center;
+         line-height: 1.9;
+         padding-bottom: 1.5%;
+         border-radius: 15px;
+         background-color: beige;
+         border: none;
+        }
+        label{
+            font-weight:bold;
+            margin-left:5px;
+        }
+        .input1{
+            padding: 5px;
+         width: 60%;
+         border-radius: 10px;
+         border: none;
+         padding: 10px;
+        }
+        button{
+        width:25%;
+            color:rgb(146, 32, 32);
+            border:none;
+            font-weight: bold;
+            padding: 15px;
+            border-radius: 15px;
+            background-color: #e2eb65;
+       }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center style="color: green;">{{ message }}</center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <center>
+        <div>
+            <h1>Login Form</h1>
+            <form method="post">
+                    <label>Enter Your Email: </label><br>
+                    <input class="input1" type="email" placeholder="Enter email" name="email"></br>
+
+                    <label>Enter Your Password: </label><br>
+                    <input class="input1" type="password" placeholder="Enter password" name="password"></br></br>
+                <button class="btn1">Submit</button></a></br>
+            </br>
+            </form>
+            <button class="forgot"><a href="{{url_for('forgotpassword')}}" style="color: rgb(146, 32, 32); text-decoration: none;">Forgot Password</a></button>
+        </div>
+    </center>
+</body>
+</html>
